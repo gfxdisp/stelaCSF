@@ -36,11 +36,9 @@ ylabel( 'Sensitivity' );
 ```
 Check also `matlab/example_plot_csf.m'.
 
-## Contrast Sensitivity stimuli
+## Data
 
-Each datapoint represent a Gabor patch at the detection threshold. 
-
-## Main data files
+Each datapoint represent a Gabor patch at the detection threshold, either for individual observer, or averaged across all observers. The sensitivity is averaged the log-contrast space. 
 
 The data is stored in 4 CSV files with the following columns
 
