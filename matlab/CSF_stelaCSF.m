@@ -95,12 +95,22 @@ classdef CSF_stelaCSF < CSF_base
             S_sust = obj.csf_achrom( rho, A, lum, ecc, obj.par.ach_sust );
             S_trans = obj.csf_achrom( rho, A, lum, ecc, obj.par.ach_trans );
 
-            if obj.ps_beta ~= 1
+%             if obj.ps_beta ~= 1
+%                 beta = obj.ps_beta;
+%                 S = ( (R_sust.*S_sust).^beta + (R_trans.*S_trans).^beta).^(1/beta);
+%             else
+%                 S = R_sust.*S_sust + R_trans.*S_trans;
+%             end
+
+            S_aux = 0; %obj.aux_sensitivity( csf_pars );
+            pm_ratio=1;
+            if obj.ps_beta ~= 1 
                 beta = obj.ps_beta;
-                S = ( (R_sust.*S_sust).^beta + (R_trans.*S_trans).^beta).^(1/beta);
+                S = ( (R_sust.*S_sust .* sqrt(pm_ratio)).^beta + (R_trans.*S_trans .* sqrt(1./pm_ratio)).^beta + S_aux.^beta).^(1/beta);
             else
-                S = R_sust.*S_sust + R_trans.*S_trans;
+                S = R_sust.*S_sust .* sqrt(pm_ratio) + R_trans.*S_trans .* sqrt(1./pm_ratio) + S_aux;
             end
+            
 
             % The drop of sensitivity with the eccentricity (the window of
             % visibiliy model + extension)
@@ -286,21 +296,21 @@ classdef CSF_stelaCSF < CSF_base
 
             p = CSF_base.get_dataset_par();
 
-            % Fitted on 2022/01/26
-            p.ach_sust.S_max = [ 65.4012 29.8305 0.20376 7.63446e-07 6.93565e+09 ];
-            p.ach_sust.f_max = [ 1.56511 51.1941 0.245 ];
-            p.ach_sust.bw = 1.12573;
-            p.ach_sust.a = 0.0835553;
-            p.ach_trans.S_max = [ 0.52776 64.0614 ];
-            p.ach_trans.f_max = 0.0162855;
-            p.ach_trans.bw = 2.83028;
+            % fitting based on the run: stela-csf_all_2022-04-16_16-48
+            p.ach_sust.S_max = [ 68.9501 59.5023 0.164274 7.54866e-07 7.77268e+09 ];
+            p.ach_sust.f_max = [ 1.62144 36.6565 0.255823 ];
+            p.ach_sust.bw = 0.000219263;
+            p.ach_sust.a = 0.103686;
+            p.ach_trans.S_max = [ 0.500846 57.3469 ];
+            p.ach_trans.f_max = 0.0267489;
+            p.ach_trans.bw = 1.75147;
             p.ach_trans.a = 0.000273289;
-            p.sigma_trans = 0.131865;
-            p.sigma_sust = 12.7124;
-            p.ecc_drop = 0.0269434;
-            p.ecc_drop_nasal = 0.0135085;
-            p.ecc_drop_f = 0.0200995;
-            p.ecc_drop_f_nasal = 0.0171336;
+            p.sigma_trans = 0.12314;
+            p.sigma_sust = 5.79336;
+            p.ecc_drop = 0.0296662;
+            p.ecc_drop_nasal = 0.0113638;
+            p.ecc_drop_f = 0.0190062;
+            p.ecc_drop_f_nasal = 0.0193858;
 
         end
 
