@@ -40,11 +40,39 @@ Check also `matlab/example_plot_csf.m'.
 
 Each datapoint represent a Gabor patch at the detection threshold, either for individual observer, or averaged across all observers. The sensitivity is averaged the log-contrast space. 
 
-The data is stored in 4 CSV files with the following columns
+The data is stored in the CSV files:
 
-* `data_individual.csv` - measurements for individual participants. 
+* `data/data_individual.csv` - measurements for individual participants. 
 
 If no individual data is available in a dataset/paper, it is excluded from `data_individual.csv`. 
+
+* `data/data_aggregated.csv` - the sensitivities averaged across the participants.
+
+The columns are identical as in `data_individual.csv` but without the columns `observer` and `age`. 
+
+* `data/backgrounds.csv` - the LMS coordinates of the background/adaptation colour
+
+The background IDs are unique across all datasets so that the tables `data*` and `backgrounds` can be merged using `bkg_id` as the key. 
+
+bkg_id - the unique ID of the background colour 
+L, M, S - LMS colour coordinates
+R - rod response or scotopic luminance (CIE 1951 scotopic luminous function)
+bkg_label - string label of the background (e.g. 'red', 'white', 'd65')
+dataset - the ID of the dataset
+
+* `data/color_direction.csv` - the LMS colour vector representing the colour axis along which the stimulus (Gabor) was modulated
+
+The colour directions IDs are unique across all datasets so that the tables `data*` and `color_direction` can be merged using `color_direction` as the key. 
+
+col_dir_id - the unique ID of the colour direction
+L_delta ,M_delta, S_delta - the vector defining the direction in the LMS colour space
+dataset - the ID of the dataset
+
+* `data/data_individual_merged.csv` - the same as `data_individual.csv` but merged with both `backgrounds.csv` and `color_direction.csv`. 
+
+* `data/data_aggregated_merged.csv` - the same as `data_aggregated.csv` but merged with both `backgrounds.csv` and `color_direction.csv`. 
+
+* `data/datasets.json` - metadata of each dataset
 
 Columns:
 - observer - The anonymized unique ID of an observer. Some observers can be common across the datasets. 
@@ -68,31 +96,3 @@ Columns:
   180 - nasa (horizontal, toward the nose)
   240 - inferior (vertical, bottom)
   The values are equivalent to the polar coordinates for the right eye. 
-
-* `data_individual_merged.csv` - the same as `data_individual.csv` but merged with both `backgrounds.csv` and `color_direction.csv`. 
-
-* `data_aggregated.csv` - the sensitivities averaged across the participants.
-
-The columns are identical as in `data_individual.csv` but without the columns `observer` and `age`. 
-
-* `data_aggregated_merged.csv` - the same as `data_aggregated.csv` but merged with both `backgrounds.csv` and `color_direction.csv`. 
-
-* `backgrounds.csv` - the LMS coordinates of the background/adaptation colour
-
-The background IDs are unique across all datasets so that the tables `data*` and `backgrounds` can be merged using `bkg_id` as the key. 
-
-bkg_id - the unique ID of the background colour 
-L, M, S - LMS colour coordinates
-R - rod response or scotopic luminance (CIE 1951 scotopic luminous function)
-bkg_label - string label of the background (e.g. 'red', 'white', 'd65')
-dataset - the ID of the dataset
-
-* `color_direction.csv` - the LMS colour vector representing the colour axis along which the stimulus (Gabor) was modulated
-
-The colour directions IDs are unique across all datasets so that the tables `data*` and `color_direction` can be merged using `color_direction` as the key. 
-
-col_dir_id - the unique ID of the colour direction
-L_delta ,M_delta, S_delta - the vector defining the direction in the LMS colour space
-dataset - the ID of the dataset
-
-* `datasets.json` - metadata of each dataset

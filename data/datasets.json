@@ -1,0 +1,142 @@
+{
+    "datasets": {
+		"rovamo1993":  {
+			"full_name": "Rovamo et al. 1993",
+            "author": "Jyrki Rovamo, Olavi Luntinen, Risto N�s�nen",
+			"year": "1993",
+			"article_name": "Modelling the dependence of contrast sensitivity on grating area and spatial frequency",
+			"venue": "Vision Research",
+            "paper_doi": "10.1016/0042-6989(93)90235-O",
+			"url": "https://www.sciencedirect.com/science/article/pii/004269899390235O",
+            "source": "plots",
+            "stimulus": "grating-rectangular_aperture",
+            "dimensions": [ "s_frequency", "area" ],
+            "protocol": "2IFC-detection"
+        },
+        "hdr_csf": {
+            "full_name": "High Dynamic Range CSF",
+			"author": "Sophie Wuerger, Maliha Ashraf, Minjung Kim, Jasna Martinovic, Mar�a P�rez-Ortiz, Rafal K. Mantiuk",
+			"year": "2020",
+			"article_name": "Spatio-chromatic contrast sensitivity under mesopic and photopic light levels",
+			"venue": "Journal of Vision (JoV)",
+            "paper_doi": "10.1167/jov.20.4.23",
+			"url": "https://jov.arvojournals.org/article.aspx?articleid=2765519",
+            "source": "author",
+            "dimensions": [ "s_frequency", "col_dir", "luminance", "size" ],
+            "stimulus": "gabor",
+            "protocol": "4AFC-detection"
+        },
+        "hdrvdp_csf": {
+            "full_name": "HDR-VDP CSF",
+			"author": "Rafal Mantiuk, Kil Joong Kim, Allan G. Rempel, Wolfgang Heidrich",
+			"year": "2011",
+			"article_name": "HDR-VDP-2: a calibrated visual metric for visibility and quality predictions in all luminance conditions",
+			"venue": "ACM Transactions on Graphics (SIGGRAPH)",
+            "paper_doi": "10.1145/2010324.1964935",
+			"url": "https://dl.acm.org/doi/10.1145/2010324.1964935",
+            "source": "author",
+            "stimulus": "gabor",
+            "protocol": "4AFC-detection"
+        },
+        "modelfest": {
+            "full_name": "ModelFest",
+			"author": "Andrew B. Watson",
+			"year": "2000",
+			"article_name": "Visual detection of spatial contrast patterns: Evaluation of five simple models",
+			"venue": "Optics Express",
+            "paper_doi": "10.1364/OE.6.000012",
+			"url": "https://opg.optica.org/oe/fulltext.cfm?uri=oe-6-1-12&id=63447",
+            "source": "author",
+            "stimulus": "gabor",
+            "protocol": "2AFC-detection"
+        },
+        "laird2006": {
+            "full_name": "Laird et al. 2006",
+			"author": "Justin Laird, Mitchell Rosen, Jeff Pelz, Ethan Montag, Scott Daly",
+			"year": "2006",
+			"article_name": "Spatio-velocity CSF as a function of retinal velocity using unstabilized stimuli",
+			"venue": "Proceedings of the Human Vision and Electronic Imaging Conference XI",
+            "paper_doi": "10.1117/12.647870",
+			"url": "https://www.spiedigitallibrary.org/conference-proceedings-of-spie/6057/605705/Spatio-velocity-CSF-as-a-function-of-retinal-velocity-using/10.1117/12.647870.full",
+            "source": "plots",
+            "stimulus": "gabor",
+            "protocol": "2IFC-detection"
+        },
+		"virsu1979":  {
+			"full_name": "Virsu & Rovamo 1979",
+			"author": "Veijo Virsu, Jyrki Rovamo",
+			"year": "1979",
+			"article_name": "Visual resolution, contrast sensitivity, and the cortical magnification factor",
+			"venue": "Experimental Brain Research (Springer)",
+            "paper_doi": "10.1007/BF00236818",
+            "source": "plots",
+            "url": "https://link.springer.com/article/10.1007/BF00236818",
+            "stimulus": "grating-circular_aperture",
+            "protocol": "2AFC-detection"
+		},
+		"robson1966":	{
+			"full_name": "Robson 1966",
+			"author": "J. G. Robson",
+			"year": "1966",
+			"article_name": "Spatial and Temporal Contrast-Sensitivity Functions of the Visual System",
+			"venue": "Journal of the Optical Society of America",
+            "paper_doi": "10.1364/JOSA.56.001141",
+			"url": "https://opg.optica.org/josa/abstract.cfm?uri=josa-56-8-1141",
+            "source": "plots",
+            "stimulus": "grating-ractangular_aperture"
+		},
+        "virsu1982":    {
+			"full_name": "Virsu et al. 1982",
+            "author": "Veijo Virsu, Jyrki Rovamo, Pentti Laurinen, Risto N�s�nen",
+			"year": "1982",
+			"article_name": "Temporal Contrast Sensitivity and Cortical Magnification",
+			"venue": "Vision Research",
+            "paper_doi": "10.1016/0042-6989(82)90087-6",
+            "source": "plots",
+            "url": "https://www.sciencedirect.com/science/article/pii/0042698982900876",
+            "stimulus": "grating-semi-circular_aperture",
+            "dimensions": [ "s_frequency", "t_frequency", "eccentricity" ],
+            "protocol": "2AFC-detection"
+        },
+        "snowden1995":  {
+			"full_name": "Snowden et al. 1995",
+            "author": "Robert J. Snowden, Robert F. Hess, Sarah J. Waugh",
+			"year": "1995",
+			"article_name": "The Processing of Temporal Modulation at Different Levels of Retinal Illuminance",
+			"venue": "Vision Research",
+            "paper_doi": "10.1016/0042-6989(94)00158-I",
+            "source": "plots",
+            "url": "https://www.sciencedirect.com/science/article/pii/004269899400158I",
+            "stimulus": "gabor",
+            "dimensions": [ "s_frequency", "t_frequency", "luminance" ],
+            "protocol": "2AFC-detection"
+        },
+        "anderson1991":  {
+			"full_name": "Anderson et al. 1991",
+            "author": "S J Anderson, K T Mullen, R F Hess",
+			"year": "1991",
+			"article_name": "Human peripheral spatial resolution for achromatic and chromatic stimuli: limits imposed by optical and retinal factors",
+			"venue": "Journal of Physiology",
+            "paper_doi": "10.1113/jphysiol.1991.sp018781",
+            "source": "plots",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1798037/",
+            "stimulus": "gabor",
+            "dimensions": [ "s_frequency", "eccentricity", "visual field" ],
+            "protocol": "direction of motion discrimination"
+        },
+        "wright1983":  {
+			"full_name": "Wright and Johnson 1983",
+            "author": "M. J. Wright, A. Johnston",
+			"year": "1983",
+			"article_name": "Spatio-temporal contrast sensitivity and visual field locus",
+			"venue": "Vision Research",
+            "paper_doi": "10.1016/0042-6989(83)90008-1",
+            "source": "plots",
+            "url": "https://www.sciencedirect.com/science/article/pii/0042698983900081?via%3Dihub",
+            "stimulus": "grating-tapered_rectangular_aperture",
+            "dimensions": [ "s_frequency", "t_frequency", "eccentricity" ],
+            "protocol": "staircase method"
+		
+        },
+    }
+}
