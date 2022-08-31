@@ -19,8 +19,8 @@ ylabel( 'Sensitivity' );
 figure(2)
 clf;
 
-t_freq = logspace( 0.1, log10(60), 30 );
-s_freq = logspace( log10(0.5), log10(32), 30 );
+t_freq = logspace( 0.1, log10(64), 30 );
+s_freq = logspace( log10(0.5), log10(64), 30 );
 
 [ss, tt] = meshgrid( s_freq, t_freq );
 
@@ -28,7 +28,11 @@ csf_pars = struct( 's_frequency', ss(:), 't_frequency', tt(:), 'orientation', 0,
 S = csf_model.sensitivity( csf_pars );        
 S = reshape( S, size(ss) );
 
-surf( s_freq, t_freq, S );
+surf( s_freq, t_freq, S, 'FaceColor', 'interp', 'FaceLighting', 'phong' );
+set( gca, 'XScale', 'log' );
+set( gca, 'YScale', 'log' );
+set( gca, 'ZScale', 'log' );
+zlim( [1 1000] );
 xlabel( 'Spatial frequency [cpd]')
 ylabel( 'Temporal frequency [Hz]')
 zlabel( 'Sensitivity')

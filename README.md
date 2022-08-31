@@ -24,6 +24,7 @@ To plot the CSF as the function of temporal frequency:
 ```
 clf;
 
+csf_model = CSF_stelaCSF();
 t_freq = linspace( 0, 60 )'; %Hz, must be a column vector
 csf_pars = struct( 's_frequency', 4, 't_frequency', t_freq, 'orientation', 0, 'luminance', 100, 'area', 1, 'eccentricity', 0 );          
 S = csf_model.sensitivity( csf_pars );        
